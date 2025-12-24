@@ -6,7 +6,7 @@ import who from '@/app/assets/who-am-i.png'
 export default function About() {
     return (
         <div className="h-screen w-full overflow-hidden bg-[#06090A] flex">
-            <div className="relative h-full w-full  max-w-[1500px] flex  items-center">
+            <div className="relative h-full w-fit  max-w-[1500px] flex  items-center">
                 <div className="h-full w-auto text-purple-400 font-bold text-[110px] relative flex items-center ">
                 <Image
                     src={side_frame}
@@ -25,7 +25,7 @@ export default function About() {
                     <span className="[writing-mode:vertical-rl] rotate-180 absolute left-25">WHO AM I</span>
                 </div>
 
-            <div className="relative ml-5 w-max-[200] flex flex-col items-start justify-center ">
+            <div className="relative ml-5 w-max-[200px] flex flex-col items-start justify-center ">
                 <h1 className="font-bold text-7xl">SHREYAS C.</h1>
                 <h3 className="font-bold text-2xl text-[#875edd] tracking-[0.5rem]">Fullstack Dev</h3>
                 <hr className="bg-amber-50 w-full border-[0.5] mt-2" />
