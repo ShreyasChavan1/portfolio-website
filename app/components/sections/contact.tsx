@@ -1,3 +1,5 @@
+import Fire from "./fire"
+
 export default function Contact(){
     type cont_type = {
         social:string,
@@ -20,27 +22,30 @@ export default function Contact(){
     ]
     return (
         <div className="h-screen w-full overflow-hidden bg-[#06090A] flex">
-            <div className="h-full max-w-[1500px] p-5 mx-auto grid grid-cols-[1fr_2fr] gap-3 relative mt-10">
-                <div className="flex flex-col text-left leading-[0.9]">
-                    <span className="text-[5rem] font-bold">Let's Build Something</span><br />
-                    <span className="text-[5rem] font-bold text-purple-500">Great</span>
+            <div className="h-full max-w-[1500px] p-5 mx-auto grid grid-cols-2 gap-3 relative mt-10">
+                <div className="flex justify-center ">
+                    <div className="flex flex-col text-left leading-[0.9]  relative w-110">
+                        <span className="text-[5rem] font-bold">Let's Build Something</span>
+                        <span className="text-[5rem] font-bold text-purple-500">Great</span>
+                    </div>
                 </div>
-                <div className="flex flex-col justify-center">
+                <div className="flex flex-col justify-between ">
                     {
                         contacts.map((contact,i)=>{
                             return(
-                                <>
-                                    <span className="text-2xl text-purple-600">{contact.social}</span>
+                                <div key={i}>
+                                    <span className="text-2xl text-purple-600">{contact.social}</span><br />
                                     <span className="text-2xl">{contact.handle}</span>
-                                </>
+                                </div>
                             )
                         })
                     }
                 </div>
-                <div className=" col-span-2 flex flex-col justify-end p-1">
-                    <div>HOME ABOUT SKILLS</div>
+                <div className=" col-span-2 flex flex-col justify-end p-1 text-center">
+                    {/* <div>HOME ABOUT SKILLS</div> */}
                     <span className="text-[15rem] font-bold">SHREYAS C.</span>
                 </div>
+                <Fire/>
             </div>
         </div>
     )

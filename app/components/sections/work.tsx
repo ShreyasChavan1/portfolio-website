@@ -27,7 +27,7 @@ export default function Work(){
     return (
         <div className="h-full w-full bg-[#06090A] flex overflow-hidden">
             <div className="h-full max-w-[1500px] mx-auto flex flex-col gap-5 relative items-center">
-                <div className="relative w-[70vw] flex flex-col gap-2">
+                <div className="relative w-[75vw] flex flex-col gap-2">
                     <div> 
                         <Image
                             src={leetclone}
