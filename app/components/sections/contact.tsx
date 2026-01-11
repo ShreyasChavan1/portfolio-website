@@ -45,7 +45,7 @@ export default function Contact(){
                     {/* <div>HOME ABOUT SKILLS</div> */}
                     <span className="text-[15rem] font-bold">SHREYAS C.</span>
                 </div>
-                <Fire/>
+                {/* <Fire/> */}
             </div>
         </div>
     )

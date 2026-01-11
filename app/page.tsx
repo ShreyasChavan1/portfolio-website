@@ -8,6 +8,7 @@ import Work from "./components/sections/work";
 import Contact from "./components/sections/contact";
 import Navbar from "./components/navbar/overlay";
 
+
 export default function Home() {
   return (
     <>
@@ -17,7 +18,6 @@ export default function Home() {
       <Skills/>
       <Work/>
       <Contact/>
-      <Navbar/>
     </>
   );
 }
