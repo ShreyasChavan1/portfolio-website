@@ -5,10 +5,13 @@ import Orbtrigger from "./orb";
 import Navbar from "./overlay";
 export default function NavWrapper(){
     const [open,setOpen] = useState(false);
+    const Toggle = () =>{
+        setOpen(prev => !prev);
+    }
     return (
         <>
-         <Orbtrigger onClick = {()=>setOpen(true)}/>
-         <Navbar open={open} onClose={()=>setOpen(false)} />
+         <Orbtrigger onClick = {Toggle}/>
+         <Navbar open={open} onToggle={Toggle} />
         </>
     )
 }

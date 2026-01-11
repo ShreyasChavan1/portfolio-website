@@ -4,13 +4,17 @@ import Orbtrigger from "./orb";
 
 type navbarprops = {
     open: boolean,
-    onClose: ()=> void
+    onToggle: ()=> void
 }
-export default function Navbar({open,onClose}:navbarprops){
+export default function Navbar({open,onToggle}:navbarprops){
     if(!open)return null;
     return (
-        <div className="h-screen w-full bg-[#06090a94] overflow-hidden flex fixed inset-0 z-100">
-            <Orbtrigger onClick={onClose} />
+        <div className="h-screen w-full bg-[#06090ad4] overflow-hidden backdrop-blur-md flex fixed inset-0 z-100">
+             <div className="absolute top-6 left-6 z-110">
+        <Orbtrigger onClick={onToggle} />
+      </div>
+
+
             <div  className="h-full max-w-[1500px] mx-auto p-5 relative flex items-end">
                 <div className="flex  w-screen justify-between">
                     <div className="flex flex-col">

@@ -43,7 +43,7 @@ export default function Contact(){
                 </div>
                 <div className=" col-span-2 flex flex-col justify-end p-1 text-center">
                     {/* <div>HOME ABOUT SKILLS</div> */}
-                    <span className="text-[15rem] font-bold">SHREYAS C.</span>
+                    <span className="text-[14rem] font-bold">SHREYAS C.</span>
                 </div>
                 {/* <Fire/> */}
             </div>
