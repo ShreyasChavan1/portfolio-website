@@ -10,7 +10,7 @@ export default function Navbar({open,onToggle}:navbarprops){
     if(!open)return null;
     return (
         <div className="h-screen w-full bg-[#06090ad4] overflow-hidden backdrop-blur-md flex fixed inset-0 z-100">
-             <div className="absolute top-6 left-6 z-110">
+             <div className="absolute top-6 left-6 z-110 ">
         <Orbtrigger onClick={onToggle} />
       </div>
 
