@@ -32,7 +32,7 @@ export default function About() {
                     className="absolute left-13 z-20"
                     animate={
                         Inview ? 
-                        {x:[0,-50,0]}:
+                        {x:[0,30]}:
                         {x:0}
                     }
                     transition={{
@@ -43,7 +43,7 @@ export default function About() {
                     <motion.span
                     animate={
                         Inview ? 
-                        {x:[0,-50,0]}:
+                        {x:[0,30]}:
                         {x:0}
                     }
                     transition={{
