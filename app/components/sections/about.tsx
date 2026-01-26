@@ -1,9 +1,10 @@
 import side_frame from "@/app/assets/side_frame.png"
 import Image from "next/image"
+import me from '@/app/assets/maimage.png'
 import body from "@/app/assets/temp_body.png"
 import who from '@/app/assets/who-am-i.png'
-import {useScroll, motion ,useInView} from 'framer-motion'
-import { useRef } from "react"
+import {useScroll, motion ,useInView,easeInOut} from 'framer-motion'
+import { useRef , useState , useEffect} from "react"
 import { once } from "events"
 
 const MotionImage = motion(Image)
@@ -11,52 +12,53 @@ export default function About() {
     const heroRef = useRef(null)
     const Inview = useInView(heroRef,{
         once:true,
-        margin:"-20% 0px"
+        margin:"-50% 0px -50% 0px"
     })
+    const slideVariant = {
+    hidden: {
+        x: 30,
+        opacity:0
+    },
+    visible: {
+        x: 0,
+        opacity:1,
+        transition: {
+        duration: 2,
+        ease: easeInOut,
+        },
+    },
+}
+const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+useEffect(() => {
+  const handleResize = () => setScreenWidth(window.innerWidth);
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
     return (
         <div ref={heroRef} className="relative h-screen w-full overflow-hidden bg-[#06090A] flex">
-            <div className="relative h-full w-full  max-w-[1450px] flex  items-center">
-                <div className="h-full w-auto text-purple-400 font-bold text-[110px] relative flex items-center ">
-                <Image
-                    src={side_frame}
-                    alt="sidefrmae"
-                    width={680}
-                    height={300}
-                    className="relative"
-                />
-                <MotionImage
-                    src={body}
-                    alt="body"
-                    width={600}
-                    height={300}
-                    className="absolute left-13 z-20"
-                    animate={
-                        Inview ? 
-                        {x:[0,30]}:
-                        {x:0}
-                    }
-                    transition={{
-                        duration:2,
-                        ease:"easeInOut"
-                    }}
-                /> 
+            <div className="relative h-full w-full  max-w-[1300px] mx-auto flex flex-col md:flex-row items-center">
+                <div className="md:h-full w-auto text-purple-400 font-bold text-6xl md:text-[110px] relative flex items-center ">
+
                     <motion.span
+                    variants={slideVariant}
                     animate={
                         Inview ? 
-                        {x:[0,30]}:
-                        {x:0}
+                        "visible":
+                        "hidden"
                     }
                     transition={{
                         duration:2,
                         ease:"easeInOut"
-                    }} className="[writing-mode:vertical-rl] rotate-180 absolute left-25">WHO AM I</motion.span>
+                    }} className="md:[writing-mode:vertical-rl] md:rotate-180 md:absolute text-5xl md:text-8xl mt-4 md:mt-0  md:left-25">WHO AM I</motion.span>
                 </div>
 
-            <div className="relative ml-5 w-max-[200px] flex flex-col items-start justify-center ">
-                <h1 className="font-bold text-7xl">SHREYAS C.</h1>
-                <h3 className="font-bold text-2xl text-[#875edd] tracking-[0.5rem]">Fullstack Dev</h3>
+            <div className="relative m-4 md:m-5 mt-10 md:mt-0 w-max-[200px] flex flex-col items-start justify-center ">
+                <h1 className="font-bold text-3xl md:text-7xl">SHREYAS C.</h1>
+                <h3 className="font-bold text-1xl md:text-2xl text-[#875edd] tracking-[0.4rem] md:tracking-[0.5rem] ">Fullstack Dev</h3>
                 <hr className="bg-amber-50 w-full border-[0.5] mt-2" />
-                <p className="max-w-prose text-3xl mt-5 font-extralight tracking-wider">
+                <p className="max-w-prose text-1xl md:text-3xl mt-2 md:mt-5 font- md:font-extralight tracking-wider">
                     I build modern, fast, and minimal interfaces
                     using React, Next.js, JavaScript, and design-first thinking.
                     I like mixing solid fundamentals with
@@ -64,6 +66,13 @@ export default function About() {
                     smooth, not just functional.
                 </p>
             </div>
+            <MotionImage
+            variants={slideVariant}
+            animate={Inview ? "visible" : "hidden"}
+            src={me}
+            alt="me"
+            style={{ width: screenWidth <= 500 ? 300 : 370 }}
+            className="rounded-lg"/>
             </div>
         </div>
     )

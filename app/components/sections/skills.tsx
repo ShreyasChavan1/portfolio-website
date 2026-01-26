@@ -1,9 +1,12 @@
-import {motion,useInView,useScroll, useTransform} from 'framer-motion'
-import { useRef } from 'react'
+import {easeInOut, motion,useInView,useScroll, useTransform} from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 
 
 export default function Skills() {
-   
+   const catref = useRef(null);
+   const Inview = useInView(catref,{
+    once:true
+   })
     type Types = {
         category: string,
         tech: string[],
@@ -11,12 +14,12 @@ export default function Skills() {
     const skills: Types[] = [
         {
             category: "LANGUAGES",
-            tech: ["C++", "PYTHON", "JAVASCRIPT"]
+            tech: ["C++","PYTHON","JAVASCRIPT"]
 
         },
         {
             category: "WEB-DEV",
-            tech: ["MERN", "HTML", "NEXT.JS", "TAILWIND", "FRAMER-MOTION"]
+            tech: ["FRAMER-MOTION","TAILWIND","NEXT.JS","HTML","MERN"]
 
         },
         {
@@ -26,13 +29,30 @@ export default function Skills() {
         },
         {
             category: "DEVOPS",
-            tech: ["GIT", "NGINX", "AZURE", "DOCKER", "Github-Actions"]
+            tech: [ "Github-Actions","DOCKER","AZURE","NGINX","GIT"]
 
         },
 
     ]
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    
+    useEffect(() => {
+      const handleResize = () => setScreenWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return (
-        <div className="h-full w-full bg-[rgb(6,9,10)] overflow-hidden">
+        <div className="h-full w-full bg-[rgb(6,9,10)] overflow-hidden text-center">
+            <motion.div
+            ref={catref}
+            initial={ {y:30,opacity:0}}
+            animate={Inview ? 
+                {y:0,opacity:1} : {y:30,opacity:0}}
+                transition={{
+                    duration:2,
+                    ease:easeInOut
+                }}
+            className='text-7xl md:text-9xl font-bold m-3 '>▸SKILLS◂</motion.div>
             {skills.map((cat, i) => {
                 const heroRef = useRef(null)
                 const {scrollYProgress} = useScroll({
@@ -44,7 +64,7 @@ export default function Skills() {
                 const x = useTransform(
                     scrollYProgress,
                     [0,1],
-                    direction === "left" ? [-150,150] : [150,-150]
+                    direction === "left" ? [-40,40] : [70,-30]
                 )
                 return (
                     <>
@@ -53,21 +73,26 @@ export default function Skills() {
                         <>
                                 <motion.div 
                                 style={{x}}
-                                className="[writing-mode:vertical-rl] rotate-180 text-9xl font-bold text-[#875edd]  relative">
+                                className="[writing-mode:vertical-rl] rotate-180 text-6xl md:text-9xl font-bold text-purple-400  relative">
                                     {cat.category}
                                 </motion.div>
-                                <div className="w-fit relative flex flex-col text-8xl font-bold items-start justify-center">
+                                <div className="w-fit relative flex flex-col text-4xl md:text-8xl font-bold items-start justify-center">
                                     {cat.tech.map((tech, i) => {
-                                    const total = tech.length
-                                    const gap = 1 / (total + 1)
+                                   const total = tech.length
+                                    const CENTER = 0.5
+                                    const spread = 0.35
+                                    const step = spread / total
 
-                                    const start = gap * i
-                                    const end = start + gap * 1.2
+                                    const centerPoint =
+                                    CENTER - spread / 2 + i * step
+
+                                    const start = centerPoint - 0.15
+                                    const end = centerPoint
 
                                         const x = useTransform(
                                             scrollYProgress,
                                             [start,end],
-                                            ["-30vw","0vw"]
+                                            [-50,0]
                                         )
                                         const opacity = useTransform(
                                             scrollYProgress,
@@ -86,18 +111,23 @@ export default function Skills() {
                         </>
                             :
                             <>
-                                <div className="w-fit relative flex flex-col text-8xl font-bold items-end justify-center ">
+                                <div className="w-fit relative flex flex-col text-4xl md:text-8xl font-bold items-end justify-center ">
                                     {cat.tech.map((tech, i) => {
-                                       const total = tech.length
-                                    const gap = 1 / (total + 1)
+                                    const total = tech.length
+                                    const CENTER = 0.5
+                                    const spread = 0.35
+                                    const step = spread / total
 
-                                    const start = gap * i
-                                    const end = start + gap * 1.2
+                                    const centerPoint =
+                                    CENTER - spread / 2 + i * step
+
+                                    const start = centerPoint - 0.15
+                                    const end = centerPoint
 
                                         const x = useTransform(
                                             scrollYProgress,
                                             [start,end],
-                                            ["30vw","0vw"]
+                                            [50,0]
                                         )
                                         const opacity = useTransform(
                                             scrollYProgress,
@@ -115,7 +145,7 @@ export default function Skills() {
                                 </div>
                                 <motion.div
                                 style={{x}}
-                                className="[writing-mode:vertical-rl] text-9xl font-bold text-[#875edd]  relative">
+                                className="[writing-mode:vertical-rl] text-6xl md:text-9xl font-bold text-purple-400 relative">
                                     {cat.category}
                                 </motion.div>
                             </>

@@ -11,7 +11,7 @@ export default function NavWrapper(){
     }
     return (
         <>
-         <Orbtrigger onClick = {Toggle}/>
+         <Orbtrigger glow={false} scale = {0} onClick = {Toggle}/>
          <Navbar open={open} onToggle={Toggle} />
         </>
     )
