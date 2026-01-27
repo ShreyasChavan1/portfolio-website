@@ -42,7 +42,8 @@ export default function Skills() {
       return () => window.removeEventListener("resize", handleResize);
     }, []);
     return (
-        <div className="h-full w-full bg-[rgb(6,9,10)] overflow-hidden text-center">
+        <div className="md:h-full w-full bg-[rgb(6,9,10)] overflow-hidden text-center">
+
             <motion.div
             ref={catref}
             initial={ {y:30,opacity:0}}
@@ -52,7 +53,7 @@ export default function Skills() {
                     duration:2,
                     ease:easeInOut
                 }}
-            className='text-7xl md:text-9xl font-bold m-3 '>▸SKILLS◂</motion.div>
+            className='text-7xl md:text-9xl font-bold'>▸SKILLS◂</motion.div>
             {skills.map((cat, i) => {
                 const heroRef = useRef(null)
                 const {scrollYProgress} = useScroll({

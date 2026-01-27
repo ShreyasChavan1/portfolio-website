@@ -96,7 +96,7 @@ export default function Work(){
             <div className="h-full max-w-[1500px] mx-auto flex flex-col gap-5 relative items-center">
                 <div className="relative w-[90vw] md:w-[75vw] flex flex-col gap-2 hover:scale-y-[1.02] transition-y duration-500 ease-out mt-5">
                     <a href="https://www.leetclone.tech/" target="_blank" className="cursor-pointer"> 
-                        <div className="hidden md:block">
+                        <div className="hidden md:block ">
                             <Project_preview image={leetclone} video="/videos/leetclone_demo.mp4" alt="leetclone" />
                         </div>
 
@@ -123,7 +123,7 @@ export default function Work(){
 
 
                 <div className="relative md:w-[77vw] flex-row md:flex  gap-2 items-center">
-                    <div className="flex flex-col gap-3  md:w-[50vw] 
+                    <div className="flex flex-col gap-3  md:w-[50vw] md:hover:w-[55vw]
     transition-[width] duration-500 ease-out m-5 md:m-0"> 
                         <a href="https://shreyaschavan1.github.io/Prompt-GPT/" target="_blank" className="cursor-pointer">
                             <div className="hidden md:block">
@@ -149,16 +149,16 @@ export default function Work(){
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-2  md:w-[50vw] 
+                    <div className="flex flex-col gap-2  md:w-[50vw] md:hover:w-[55vw]
     transition-[width] duration-500 ease-out m-5 md:m-0"> 
                         <a href="https://shreyaschavan1.github.io/Sorting_Visualizerr/" target="_blank">
                             <div className="hidden md:block">
-  <Project_preview image={sorter} video="/vidoes/sorter.mp4" alt="sorter" />
-</div>
+                                <Project_preview image={sorter} video="/videos/sorter.mp4" alt="sorter" />
+                            </div>
 
-<div className="block md:hidden">
-  <Project_mobile_preview image={sorter} alt="sorter" />
-</div>
+                            <div className="block md:hidden">
+                                <Project_mobile_preview image={sorter} alt="sorter" />
+                            </div>
 
                         </a>
                          <div className="flex gap-2">
