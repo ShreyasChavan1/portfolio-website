@@ -34,13 +34,7 @@ export default function Skills() {
         },
 
     ]
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-    
-    useEffect(() => {
-      const handleResize = () => setScreenWidth(window.innerWidth);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+   
     return (
         <div className="md:h-full w-full bg-[rgb(6,9,10)] overflow-hidden text-center">
 

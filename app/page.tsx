@@ -14,13 +14,13 @@ export default function Home() {
   const aboutY = useTransform(scrollY,[0,600],["0%","-100%"]);
   return (
     <>
-    <section className="relative md:sticky md:top-0 h-screen md:h-screen" id="HOME">
+    <section className="relative md:sticky md:top-0 h-screen" id="HOME">
       <motion.div className="z-0 md:h-screen">
         <Hero/>
       </motion.div>
     </section>
       {/* <Fire/> */}
-      <section className="relative h-screen md:min-h-screen overflow-hidden z-50" id="ABOUT">
+      <section className="relative z-50" id="ABOUT">
 
        
       

@@ -28,17 +28,10 @@ export default function About() {
         },
     },
 }
-const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-useEffect(() => {
-  const handleResize = () => setScreenWidth(window.innerWidth);
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
 
     return (
-        <div ref={heroRef} className="relative md:h-screen w-full overflow-hidden bg-[#06090A] flex">
-            <div className="relative  w-full  max-w-[1300px] mx-auto flex flex-col md:flex-row items-center">
+        <div ref={heroRef} className="relative h-fit md:w-full overflow-hidden bg-[#06090A] flex">
+            <div className="relative w-full  max-w-[1300px] mx-auto flex flex-col md:flex-row items-center md:justify-center ">
                 <div className="md:h-full w-auto text-purple-400 font-bold text-6xl  md:text-[110px] relative flex items-center">
 
                     <motion.span
@@ -51,7 +44,7 @@ useEffect(() => {
                     transition={{
                         duration:2,
                         ease:"easeInOut"
-                    }} className="md:[writing-mode:vertical-rl] md:rotate-180 md:absolute text-5xl md:text-9xl mt-30  md:mt-0  md:left-25">WHO AM I</motion.span>
+                    }} className="md:[writing-mode:vertical-rl] md:rotate-180 md:absolute text-5xl md:text-9xl   mt-0  md:left-25">WHO AM I</motion.span>
                 </div>
             
             <div className="relative m-4 md:m-5 md:mt-10 w-max-[200px] flex flex-col items-start justify-center ">
@@ -74,16 +67,16 @@ useEffect(() => {
                 alt="me"
                 
                 style={{ width: 400}}
-                className="rounded-lg"/>
+                className="rounded-lg " />
             </div>
-            <div className="block md:hidden">
+            <div className="block md:hidden m-3">
                 <MotionImage
                 variants={slideVariant}
                 animate={Inview ? "visible" : "hidden"}
                 src={m1}
                 alt="me"
-                style={{ width: screenWidth <= 500 ? 350 : 370 }}
-                className="rounded-lg"/>
+                style={{ width: 370 }}
+                className="rounded-lg object-cover"/>
             </div>
             </div>
         </div>

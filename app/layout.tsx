@@ -6,6 +6,7 @@ import Orbtrigger from "./components/navbar/orb";
 import Navbar from "./components/navbar/overlay";
 
 import NavWrapper from "./components/navbar/navwrapper";
+import { FaHamburger } from "react-icons/fa";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,10 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         {children}
        <NavWrapper/>
+       
       </body>
     </html>
   );

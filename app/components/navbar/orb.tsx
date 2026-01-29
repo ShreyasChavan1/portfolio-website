@@ -13,7 +13,7 @@ export default function Orbtrigger({glow,onClick,scale} : Orbtriggerprops){
     const MotionImage = motion(Image)
     return (
         <>
-            <div onClick={onClick} className="fixed right-5 top-5 z-55">
+            <div onClick={onClick} className="hidden md:block fixed right-5 top-5 z-55">
                 <MotionImage
                     src={glow? glowed : orb}
                     alt="orb"
