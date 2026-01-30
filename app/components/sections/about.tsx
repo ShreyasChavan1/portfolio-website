@@ -1,10 +1,9 @@
-import side_frame from "@/app/assets/side_frame.png"
 import Image from "next/image"
 import me from '@/app/assets/maimage.png'
 import m1 from '@/app/assets/maimage1.png'
 
-import {useScroll, motion ,useInView,easeInOut} from 'framer-motion'
-import { useRef , useState , useEffect} from "react"
+import {motion ,useInView,easeInOut} from 'framer-motion'
+import { useRef } from "react"
 
 
 const MotionImage = motion(Image)
@@ -30,28 +29,28 @@ export default function About() {
 }
 
     return (
-        <div ref={heroRef} className="relative h-fit md:w-full overflow-hidden bg-[#06090A] flex">
-            <div className="relative w-full  max-w-[1300px] mx-auto flex flex-col md:flex-row items-center md:justify-center ">
-                <div className="md:h-full w-auto text-purple-400 font-bold text-6xl  md:text-[110px] relative flex items-center">
+        <div ref={heroRef} className="relative h-fit lg:h-screen md:h-screen lg:w-full md:w-full overflow-hidden bg-[#06090A] flex">
+            <div className="relative w-full  max-w-[1300px] mx-auto flex flex-col lg:flex-row md:flex-row items-center lg:justify-center md:justify-center ">
+                <div className="lg:h-full md:h-full w-auto text-purple-400 font-bold text-6xl  lg:text-[110px] md:text-[90px] relative flex items-center">
 
                     <motion.span
                     variants={slideVariant}
                     animate={
-                        Inview ? 
+                        Inview ?
                         "visible":
                         "hidden"
                     }
                     transition={{
                         duration:2,
                         ease:"easeInOut"
-                    }} className="md:[writing-mode:vertical-rl] md:rotate-180 md:absolute text-5xl md:text-9xl   mt-0  md:left-25">WHO AM I</motion.span>
+                    }} className="lg:[writing-mode:vertical-rl] md:[writing-mode:vertical-rl] lg:rotate-180 md:rotate-180 lg:absolute md:absolute text-5xl lg:text-9xl md:text-8xl   mt-0  lg:left-25 md:left-20">WHO AM I</motion.span>
                 </div>
             
-            <div className="relative m-4 md:m-5 md:mt-10 w-max-[200px] flex flex-col items-start justify-center ">
-                <h1 className="font-bold text-3xl md:text-7xl">SHREYAS C.</h1>
-                <h3 className="font-bold text-1xl md:text-2xl text-[#875edd] tracking-[0.4rem] md:tracking-[0.5rem] ">Fullstack Dev</h3>
+            <div className="relative m-4 lg:m-5 md:m-4 lg:mt-10 md:mt-8 w-max-[200px] flex flex-col items-start justify-center ">
+                <h1 className="font-bold text-3xl lg:text-7xl md:text-6xl">SHREYAS C.</h1>
+                <h3 className="font-bold text-1xl lg:text-2xl md:text-xl text-[#875edd] tracking-[0.4rem] lg:tracking-[0.5rem] md:tracking-[0.4rem] ">Fullstack Dev</h3>
                 <hr className="bg-amber-50 w-full border-[0.5] mt-2" />
-                <p className="max-w-prose text-[20px] md:text-3xl mt-2 md:mt-5 font-medium md:font-extralight md:tracking-wider leading-[1.2] md:leading-none">
+                <p className="max-w-prose text-[20px] lg:text-3xl md:text-2xl mt-2 lg:mt-5 md:mt-4 font-medium lg:font-extralight md:font-light lg:tracking-wider md:tracking-wide leading-[1.2] lg:leading-none md:leading-tight">
                     I build modern, fast, and minimal interfaces
                     using React, Next.js, JavaScript, and design-first thinking.
                     I like mixing solid fundamentals with
@@ -59,7 +58,7 @@ export default function About() {
                     smooth, not just functional.
                 </p>
             </div>
-            <div className="hidden md:block w-130">
+            <div className="hidden lg:block md:block w-130">
                 <MotionImage
                 variants={slideVariant}
                 animate={Inview ? "visible" : "hidden"}
@@ -69,7 +68,7 @@ export default function About() {
                 style={{ width: 400}}
                 className="rounded-lg " />
             </div>
-            <div className="block md:hidden m-3">
+            <div className="block lg:hidden md:hidden m-3 lg:m-3 md:m-2">
                 <MotionImage
                 variants={slideVariant}
                 animate={Inview ? "visible" : "hidden"}

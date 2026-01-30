@@ -1,5 +1,5 @@
 import {easeInOut, motion,useInView,useScroll, useTransform} from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 
 
 export default function Skills() {
@@ -63,10 +63,11 @@ export default function Skills() {
                 )
                 return (
                     <>
-                        <div ref={heroRef} key={cat.category} className="relative h-full max-w-[1500px] p-6 mx-auto flex items-center justify-around">
+                        <div ref={heroRef} key={i} className="relative h-full max-w-[1500px] p-6 mx-auto flex items-center justify-around">
                         {i % 2 === 0 ?
                         <>
                                 <motion.div 
+                                key={i}
                                 style={{x}}
                                 className="[writing-mode:vertical-rl] rotate-180 text-6xl md:text-9xl font-bold text-purple-400  relative">
                                     {cat.category}

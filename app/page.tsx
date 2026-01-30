@@ -14,8 +14,8 @@ export default function Home() {
   const aboutY = useTransform(scrollY,[0,600],["0%","-100%"]);
   return (
     <>
-    <section className="relative md:sticky md:top-0 h-screen" id="HOME">
-      <motion.div className="z-0 md:h-screen">
+    <section className="relative lg:sticky md:sticky lg:top-0 md:top-0 h-screen" id="HOME">
+      <motion.div className="z-0 lg:h-screen md:h-screen">
         <Hero/>
       </motion.div>
     </section>

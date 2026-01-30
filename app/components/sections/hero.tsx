@@ -40,20 +40,20 @@ export default function Hero() {
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-[#06090A]">
-      <div className="relative md:h-full max-w-[1500px] mx-auto px-2 md:px-8 flex flex-col-reverse md:flex-row items-center md:items-start">
+      <div className="relative lg:h-full md:h-full max-w-[1500px] mx-auto px-2 lg:px-8 md:px-6 flex flex-col-reverse lg:flex-row items-center lg:items-start md:items-center">
 
         {/* Text */}
         <div className="mt-10 ml-3 md:ml-10 w-fit h-fit">
-          <span className="text-[60px] md:text-9xl text-purple-400 font-bold leading-[0.8]">
+          <span className="text-[60px] lg:text-9xl md:text-8xl text-purple-400 font-bold leading-[0.8]">
             Hello
           </span><br />
-          <span className="text-[60px] md:text-[120px] text-white font-bold leading-[0.9]">
+          <span className="text-[60px] lg:text-[120px] md:text-[100px] text-white font-bold leading-[0.9]">
             Call me <br />Web-Developer
           </span>
         </div>
 
         {/* Desktop visuals */}
-        <div className="absolute hidden md:block bottom-0 right-0 pointer-events-none z-20">
+        <div className="absolute hidden lg:block md:block bottom-0 right-0 pointer-events-none z-20">
           <div className="relative w-full h-full">
 
             <MotionImage
@@ -96,7 +96,7 @@ export default function Hero() {
         </div>
 
         {/* Mobile visuals */}
-        <div className="relative md:hidden w-full h-[420px] mt-10 pointer-events-none">
+        <div className="relative lg:hidden md:hidden w-full h-[420px] mt-10 pointer-events-none">
 
           <MotionImage
             src={backfire}

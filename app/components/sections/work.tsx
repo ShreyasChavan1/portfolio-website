@@ -83,7 +83,7 @@ export default function Work(){
     
     
     return (
-        <div className="h-full w-full bg-[#06090A] flex flex-col text-center overflow-hidden  md:mx-0">
+        <div className="h-full w-full bg-[#06090A] flex flex-col text-center overflow-hidden  lg:mx-0 md:mx-0">
             <motion.span  
             ref={catref}
             animate={Inview ? 
@@ -92,9 +92,9 @@ export default function Work(){
                     duration:2,
                     ease:easeInOut
                 }}
-            className='text-7xl md:text-9xl font-bold '>▸WORK◂</motion.span>
+            className='text-7xl lg:text-9xl md:text-8xl font-bold '>▸WORK◂</motion.span>
             <div className="h-full max-w-[1500px] mx-auto flex flex-col gap-5 relative items-center">
-                <div className="relative w-[90vw] md:w-[75vw] flex flex-col gap-2 hover:scale-y-[1.02] transition-y duration-500 ease-out mt-5">
+                <div className="relative w-[90vw] lg:w-[75vw] md:w-[80vw] flex flex-col gap-2 hover:scale-y-[1.02] transition-y duration-500 ease-out mt-5">
                     <a href="https://www.leetclone.tech/" target="_blank" className="cursor-pointer"> 
                         <div className="hidden md:block ">
                             <Project_preview image={leetclone} video="/videos/leetclone_demo.mp4" alt="leetclone" />
@@ -106,13 +106,13 @@ export default function Work(){
 
                     </a>
 
-                    <div className="flex flex-col md:flex-row gap-2">
-                        <div className="font-bold text-2xl md:text-4xl text-left">LeetClone</div>
+                    <div className="flex flex-col lg:flex-row md:flex-row gap-2">
+                        <div className="font-bold text-2xl lg:text-4xl md:text-3xl text-left">LeetClone</div>
                         <div className="flex gap-1">
                             {leetclone_app?.techs.map((value,i)=>{
                                 return (
                                     <>
-                                    <span className="border border-[#424242] rounded-lg p-1 md:p-2 text-x">{value}</span>
+                                    <span key={i} className="border border-[#424242] rounded-lg p-1 lg:p-2 md:p-1 text-x">{value}</span>
                                     </>
                                 )
                             })}
@@ -122,9 +122,9 @@ export default function Work(){
                 </div>
 
 
-                <div className="relative md:w-[77vw] flex-row md:flex  gap-2 items-center">
-                    <div className="flex flex-col gap-3  md:w-[50vw] md:hover:w-[55vw]
-    transition-[width] duration-500 ease-out m-5 md:m-0"> 
+                <div className="relative lg:w-[77vw] md:w-[75vw] flex-row lg:flex md:flex  gap-2 items-center">
+                    <div className="flex flex-col gap-3  lg:w-[50vw] md:w-[48vw] lg:hover:w-[55vw] md:hover:w-[52vw]
+    transition-[width] duration-500 ease-out m-5 lg:m-0 md:m-0">
                         <a href="https://shreyaschavan1.github.io/Prompt-GPT/" target="_blank" className="cursor-pointer">
                             <div className="hidden md:block">
                                 <Project_preview image={chatbot} video="/videos/gemini_preview.mp4" alt="chatbot" />
@@ -141,7 +141,7 @@ export default function Work(){
                                 {gemini_app?.techs.map((value, i) => {
                                     return (
                                         <>
-                                            <span className="border border-[#424242] rounded-lg p-2 text-xs">{value}</span>
+                                            <span key={i} className="border border-[#424242] rounded-lg p-2 text-xs">{value}</span>
                                         </>
                                     )
                                 })}
@@ -149,8 +149,8 @@ export default function Work(){
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-2  md:w-[50vw] md:hover:w-[55vw]
-    transition-[width] duration-500 ease-out m-5 md:m-0"> 
+                    <div className="flex flex-col gap-2  lg:w-[50vw] md:w-[48vw] lg:hover:w-[55vw] md:hover:w-[52vw]
+    transition-[width] duration-500 ease-out m-5 lg:m-0 md:m-0">
                         <a href="https://shreyaschavan1.github.io/Sorting_Visualizerr/" target="_blank">
                             <div className="hidden md:block">
                                 <Project_preview image={sorter} video="/videos/sorter.mp4" alt="sorter" />
@@ -167,7 +167,7 @@ export default function Work(){
                                 {sorting_app?.techs.map((value, i) => {
                                     return (
                                         <>
-                                            <span className="border border-[#424242] rounded-lg p-2 text-xs">{value}</span>
+                                            <span key={i} className="border border-[#424242] rounded-lg p-2 text-xs">{value}</span>
                                         </>
                                     )
                                 })}

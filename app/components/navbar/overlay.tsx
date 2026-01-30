@@ -1,5 +1,4 @@
-import { FaEnvelope } from "react-icons/fa"
-import { FaInstagram } from "react-icons/fa"
+import { FaEnvelope, FaInstagram } from "react-icons/fa"
 import Orbtrigger from "./orb";
 import {motion , AnimatePresence, easeInOut} from 'framer-motion'
 import { Collapse } from "./navwrapper";
@@ -71,12 +70,12 @@ export default function Navbar({open,onToggle}:navbarprops){
     return (
         <AnimatePresence>
             {open && <motion.div 
-            className="h-fit md:h-full w-full bg-[#06090ad4]  overflow-hidden backdrop-blur-md flex fixed inset-0 z-100"
+            className="h-fit lg:h-full md:h-full w-full bg-[#06090ad4]  overflow-hidden backdrop-blur-md flex fixed inset-0 z-100"
             variants={overlayVariants}
             initial="hidden"
             animate="visible"
             exit="hidden">
-                <div className="top-6 left-6 z-110 hidden md:block">
+                <div className="top-6 left-6 z-110 hidden lg:block md:block">
             <Orbtrigger glow={true} scale={5} onClick={onToggle} />
         </div>
               {/* <div className="block md:hidden absolute right-0">
@@ -90,8 +89,8 @@ export default function Navbar({open,onToggle}:navbarprops){
                 animate="visible"
                 exit="hidden"
             >
-                    <div className="flex  w-screen  md:mt-8 md:justify-between">
-                        <div className="flex flex-row md:flex-col gap-3 md:gap-0">
+                    <div className="flex  w-screen  lg:mt-8 md:mt-6 lg:justify-between md:justify-between">
+                        <div className="flex flex-row lg:flex-col md:flex-col gap-3 lg:gap-0 md:gap-0">
                             {["HOME", "ABOUT", "SKILLS", "WORK" ,"CONTACT"].map((item, i) => (
                                 <motion.span
                                    onClick={()=>handleclicks(item)}
@@ -100,13 +99,13 @@ export default function Navbar({open,onToggle}:navbarprops){
                                     variants={itemVariants}
                                     initial="hidden"
                                     animate="visible"
-                                    className="text-[15px] md:text-8xl  md:hover:text-[100px] hover:text-purple-500 hover:cursor-pointer transition-all duration-400 ease-in-out"
+                                    className="text-[15px] lg:text-8xl md:text-7xl  lg:hover:text-[100px] md:hover:text-[90px] hover:text-purple-500 hover:cursor-pointer transition-all duration-400 ease-in-out"
                                 >
                                     {item}
                                 </motion.span>
                                 ))}
                           </div>
-                        <div className="hidden md:block md:flex flex-col gap-3">
+                        <div className="hidden lg:block md:block lg:flex md:flex flex-col gap-3">
                           <a href="https://www.linkedin.com/in/shreyas-chavan-25jan2004" target="_blank" rel="noopener noreferrer">
                             <div className="rounded-[360px] border-4 border-purple-500 w-30 h-30 flex items-center justify-center hover:scale-[1.05] transition-all duration-400 ease-in-out" >
                                 <span className="text-6xl font-bold">in</span>

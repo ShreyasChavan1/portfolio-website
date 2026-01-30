@@ -19,12 +19,12 @@ export default function NavWrapper(){
     }
     return (
         <>
-        <section className="hidden md:block">
+        <section className="hidden lg:block md:block">
           
             <Orbtrigger glow={false} scale = {0} onClick = {Toggle}/>
             <Navbar open={open} onToggle={Toggle} />
         </section>
-        <section className="block md:hidden fixed top-0  right-0 z-50 p-4">
+        <section className="block lg:hidden md:hidden fixed top-0  right-0 z-50 p-4">
             <Collapse onClick={Toggle}/>
             <Navbar open={open} onToggle={Toggle} />
         </section>
