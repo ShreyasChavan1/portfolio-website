@@ -98,7 +98,7 @@ export default function Skills() {
                                         return (
                                             <>
                                                 <motion.span
-                                                style={{x,opacity}}
+                                                style={{x,opacity}} key={i}
                                                 className="">{tech}</motion.span>
                                             </>
                                         )
@@ -133,7 +133,7 @@ export default function Skills() {
                                         return (
                                             <>
                                                 <motion.span
-                                                style={{x,opacity}}
+                                                style={{x,opacity}} key={i}
                                                 className="">{tech}</motion.span>
                                             </>
                                         )
