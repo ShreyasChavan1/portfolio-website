@@ -7,15 +7,19 @@ import Aura from "@/app/assets/aura.png"
 import stars from "@/app/assets/stars.png"
 import { motion, useScroll, useTransform ,easeInOut } from 'framer-motion'
 
+import type { Transition } from "framer-motion"
+
+const EASE_IN_OUT: [number, number, number, number] = [0.4, 0, 0.2, 1]
+const LINEAR: [number, number, number, number] = [0, 0, 1, 1]
 
 const FLOAT_SLOW = {
   animate: { y: [0, 7, 0] },
-  transition: { duration: 4, repeat: Infinity, ease: easeInOut },
+  transition: { duration: 4, repeat: Infinity, ease: EASE_IN_OUT },
 }
 
 const FLOAT_FAST = {
   animate: { y: [0, 13, 0] },
-  transition: { duration: 4, repeat: Infinity, ease: easeInOut },
+  transition: { duration: 4, repeat: Infinity, ease: EASE_IN_OUT },
 }
 
 const FIRE_ANIMATION = {
@@ -24,12 +28,12 @@ const FIRE_ANIMATION = {
     y: [0, -12, 0],
     scale: [1, 0.9, 1],
   },
-  transition: { duration: 10, repeat: Infinity, ease: easeInOut },
+  transition: { duration: 10, repeat: Infinity, ease: EASE_IN_OUT },
 }
 
 const STARS_ANIMATION = {
   animate: { x: [0, 15, -10, 0], y: [0, -10, 10, 0] },
-  transition: { duration: 10, repeat: Infinity, ease: easeInOut},
+  transition: { duration: 10, repeat: Infinity, ease: LINEAR},
 }
 
 
