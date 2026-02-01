@@ -5,44 +5,37 @@ import sorter from '@/app/assets/sorter.png'
 import { useEffect, useRef, useState } from "react";
 import {easeInOut, motion , useInView}from 'framer-motion'
 
+
 function Project_preview({
   image,
   video,
   alt,
+  videoRef
 }: {
   image: StaticImageData
   video: string
   alt: string
+  videoRef: React.RefObject<HTMLVideoElement | null>
 }) {
-  const videoRef = useRef<HTMLVideoElement>(null)
+  
 
   return (
     <div
       className="relative group inline-block pointer-events-auto"
-      onMouseEnter={() => {
-        const v = videoRef.current
-        if (!v) return
-        v.play().catch(() => {})
-      }}
-      onMouseLeave={() => {
-        const v = videoRef.current
-        if (!v) return
-        v.pause()
-        v.currentTime = 0
-      }}
+     
     >
       <Image
         src={image}
         alt={alt}
         className="rounded-lg object-cover transition-opacity duration-300 group-hover:opacity-0"
       />
-
       <video
         ref={videoRef}
         src={video}
         muted
         loop
         playsInline
+        autoPlay
         preload="metadata"
         className="absolute inset-0 w-full h-full rounded-lg object-cover opacity-0
                    transition-opacity duration-300 group-hover:opacity-100"
@@ -64,6 +57,7 @@ function Project_mobile_preview({image,alt}:{image:StaticImageData,alt:string}){
     )
 }
 export default function Work(){
+    const videoRef = useRef<HTMLVideoElement | null>(null)
     const catref = useRef(null);
        const Inview = useInView(catref,{
         once:true
@@ -104,9 +98,20 @@ export default function Work(){
             className='text-7xl lg:text-9xl md:text-8xl font-bold '>▸WORK◂</motion.span>
             <div className="h-full max-w-[1500px] mx-auto flex flex-col gap-5 relative items-center">
                 <div className="relative w-[90vw] lg:w-[75vw] md:w-[80vw] flex flex-col gap-2 hover:scale-y-[1.02] transition-y duration-500 ease-out mt-5">
-                    <a href="https://www.leetclone.tech/" target="_blank" className="cursor-pointer"> 
+                    <a href="https://www.leetclone.tech/" target="_blank" className="cursor-pointer"
+                     onMouseEnter={() => {
+        const v = videoRef.current
+        if (!v) return
+        v.play().catch(() => {})
+      }}
+      onMouseLeave={() => {
+        const v = videoRef.current
+        if (!v) return
+        v.pause()
+        v.currentTime = 0
+      }}> 
                         <div className="hidden md:block ">
-                            <Project_preview image={leetclone} video="/videos/leetclone_demo.mp4" alt="leetclone" />
+                            <Project_preview image={leetclone} video="/videos/leetclone_demo.mp4" alt="leetclone" videoRef={videoRef}/>
                         </div>
 
                         <div className="block md:hidden">
@@ -134,9 +139,20 @@ export default function Work(){
                 <div className="relative lg:w-[77vw] md:w-[75vw] flex-row lg:flex md:flex  gap-2 items-center">
                     <div className="flex flex-col gap-3  lg:w-[50vw] md:w-[48vw] lg:hover:w-[55vw] md:hover:w-[52vw]
     transition-[width] duration-500 ease-out m-5 lg:m-0 md:m-0">
-                        <a href="https://shreyaschavan1.github.io/Prompt-GPT/" target="_blank" className="cursor-pointer">
+                        <a href="https://shreyaschavan1.github.io/Prompt-GPT/" target="_blank" className="cursor-pointer"
+                         onMouseEnter={() => {
+        const v = videoRef.current
+        if (!v) return
+        v.play().catch(() => {})
+      }}
+      onMouseLeave={() => {
+        const v = videoRef.current
+        if (!v) return
+        v.pause()
+        v.currentTime = 0
+      }}>
                             <div className="hidden md:block">
-                                <Project_preview image={chatbot} video="/videos/gemini_preview.mp4" alt="chatbot" />
+                                <Project_preview image={chatbot} video="/videos/gemini_preview.mp4" alt="chatbot" videoRef={videoRef}/>
                             </div>
 
                             <div className="block md:hidden">
@@ -160,9 +176,20 @@ export default function Work(){
                     </div>
                     <div className="flex flex-col gap-2  lg:w-[50vw] md:w-[48vw] lg:hover:w-[55vw] md:hover:w-[52vw]
     transition-[width] duration-500 ease-out m-5 lg:m-0 md:m-0">
-                        <a href="https://shreyaschavan1.github.io/Sorting_Visualizerr/" target="_blank">
+                        <a href="https://shreyaschavan1.github.io/Sorting_Visualizerr/" target="_blank"
+                         onMouseEnter={() => {
+        const v = videoRef.current
+        if (!v) return
+        v.play().catch(() => {})
+      }}
+      onMouseLeave={() => {
+        const v = videoRef.current
+        if (!v) return
+        v.pause()
+        v.currentTime = 0
+      }}>
                             <div className="hidden md:block">
-                                <Project_preview image={sorter} video="/videos/sorter.mp4" alt="sorter" />
+                                <Project_preview image={sorter} video="/videos/sorter.mp4" alt="sorter" videoRef={videoRef}/>
                             </div>
 
                             <div className="block md:hidden">
