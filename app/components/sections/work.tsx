@@ -6,42 +6,51 @@ import { useEffect, useRef, useState } from "react";
 import {easeInOut, motion , useInView}from 'framer-motion'
 
 function Project_preview({
-        image,
-        video,
-        alt
-    }:{
-        image:StaticImageData,
-        video:string,
-        alt:string
-    }){
-        const videoRef = useRef<HTMLVideoElement>(null)
-        return(
-            <div className="relative group inline-block"
-                
-                onMouseEnter={() => videoRef.current?.play()}
-                onMouseLeave={() => {
-                    if (!videoRef.current) return
-                    videoRef.current.pause()
-                    videoRef.current.currentTime = 0
-                }}>
-                <Image
-                    src={image}
-                    alt={alt}
-                    // width={1856}
-                    // height={898}
-                    className="rounded-lg object-cover transition-opacity duration-300 group-hover:opacity-0"
-                />
-                <video
-                    ref={videoRef}
-                    src={video}
-                    muted
-                    playsInline
-                    className="absolute rounded-lg inset-0 w-full h-full object-cover opacity-0 
-                                transition-opacity duration-300 group-hover:opacity-100"
-                />
-            </div>
-        )
-    }
+  image,
+  video,
+  alt,
+}: {
+  image: StaticImageData
+  video: string
+  alt: string
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  return (
+    <div
+      className="relative group inline-block pointer-events-auto"
+      onMouseEnter={() => {
+        const v = videoRef.current
+        if (!v) return
+        v.play().catch(() => {})
+      }}
+      onMouseLeave={() => {
+        const v = videoRef.current
+        if (!v) return
+        v.pause()
+        v.currentTime = 0
+      }}
+    >
+      <Image
+        src={image}
+        alt={alt}
+        className="rounded-lg object-cover transition-opacity duration-300 group-hover:opacity-0"
+      />
+
+      <video
+        ref={videoRef}
+        src={video}
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 w-full h-full rounded-lg object-cover opacity-0
+                   transition-opacity duration-300 group-hover:opacity-100"
+      />
+    </div>
+  )
+}
+
 function Project_mobile_preview({image,alt}:{image:StaticImageData,alt:string}){
     return(
         <div className="">

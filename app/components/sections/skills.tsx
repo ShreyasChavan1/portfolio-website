@@ -141,6 +141,7 @@ export default function Skills() {
                                 </div>
                                 <motion.div
                                 style={{x}}
+                                key={i}
                                 className="[writing-mode:vertical-rl] text-6xl md:text-9xl font-bold text-purple-400 relative">
                                     {cat.category}
                                 </motion.div>
