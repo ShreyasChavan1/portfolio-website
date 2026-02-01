@@ -39,6 +39,7 @@ function Project_preview({
       <video
         ref={videoRef}
         src={video}
+        preload="auto"
         muted
         loop
         playsInline
