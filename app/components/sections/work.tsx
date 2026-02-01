@@ -143,7 +143,7 @@ export default function Work(){
                             <div className="block md:hidden">
                                 <Project_mobile_preview image={chatbot} alt="chatbot" />
                             </div>
-                            <video src="/videos/gemini_preview.mp4" controls autoPlay muted loop playsInline preload="auto"/>
+                            <video src="/videos/gemini_web.mp4" controls autoPlay muted loop playsInline preload="auto"/>
 
                         </a>
                         <div className="flex gap-2 ">
