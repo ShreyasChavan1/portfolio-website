@@ -107,7 +107,7 @@ export default function Work(){
                 <div className="relative w-[90vw] lg:w-[75vw] md:w-[80vw] flex flex-col gap-2 hover:scale-y-[1.02] transition-y duration-500 ease-out mt-5">
                     <a href="https://www.leetclone.tech/" target="_blank" className="cursor-pointer"> 
                         <div className="hidden md:block ">
-                            <Project_preview image={leetclone} video="/videos/leetclone_demo.mp4" alt="leetclone" />
+                            <Project_preview image={leetclone} video="https://swltbadfgyuiifqsprie.supabase.co/storage/v1/object/public/Videos/leetclone_demo.mp4" alt="leetclone" />
                         </div>
 
                         <div className="block md:hidden">
@@ -137,13 +137,13 @@ export default function Work(){
     transition-[width] duration-500 ease-out m-5 lg:m-0 md:m-0">
                         <a href="https://shreyaschavan1.github.io/Prompt-GPT/" target="_blank" className="cursor-pointer">
                             <div className="hidden md:block">
-                                <Project_preview image={chatbot} video="/videos/gemini_preview.mp4" alt="chatbot" />
+                                <Project_preview image={chatbot} video="https://swltbadfgyuiifqsprie.supabase.co/storage/v1/object/public/Videos/gemini_preview.mp4" alt="chatbot" />
                             </div>
 
                             <div className="block md:hidden">
                                 <Project_mobile_preview image={chatbot} alt="chatbot" />
                             </div>
-                            <video src="/videos/gemini_web.mp4" controls autoPlay muted loop playsInline preload="auto"/>
+                            
 
                         </a>
                         <div className="flex gap-2 ">
@@ -165,7 +165,7 @@ export default function Work(){
                         <a href="https://shreyaschavan1.github.io/Sorting_Visualizerr/" target="_blank">
                          
                             <div className="hidden md:block">
-                                <Project_preview image={sorter} video="/videos/sorter.mp4" alt="sorter" />
+                                <Project_preview image={sorter} video="https://swltbadfgyuiifqsprie.supabase.co/storage/v1/object/public/Videos/sorter.mp4" alt="sorter" />
                             </div>
 
                             <div className="block md:hidden">
