@@ -83,28 +83,28 @@ const y = useSpring(
     ),
   }}
 />
-<pre className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white text-2xl animate-pulse hidden md:block">
+<pre className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white text-2xl animate-pulse hidden lg:block">
 Scroll
   <span className="text-purple-400">↓</span>
 </pre>
 
 
-      <div className="relative lg:h-full md:h-full max-w-[1500px] mx-auto px-2 lg:px-8 md:px-6 flex flex-col-reverse lg:flex-row items-center lg:items-center md:items-center">
+      <div className="relative lg:h-full md:h-screen max-w-[1500px] mx-auto px-2 lg:px-8  flex flex-col-reverse  lg:flex-row items-center md:items-start md:justify-start lg:justify-start ">
 
         {/* Text */}
-        <div className="mt-10 lg:mt-0 ml-3 md:ml-10 w-fit h-fit">
-          <span className="text-[60px] lg:text-[120px] md:text-8xl text-purple-400 font-bold leading-[0.8]">
+        <div className="mt-10 lg:mt-0 ml-3 md:ml-15 md:mt-25 w-fit h-fit">
+          <span className="text-[60px] lg:text-[120px] md:text-9xl text-purple-400 font-bold leading-[0.8]">
             I Build 
           </span><br />
-          <span className="text-[60px] lg:text-[120px] md:text-8xl text-white font-bold leading-[0.9]">
+          <span className="text-[60px] lg:text-[120px] md:text-9xl text-white font-bold leading-[0.9]">
             Websites <br /> That Move
           </span>
-          {/* <div className="bg-purple-400 text-white w-fit p-3 text-5xl font-bold hover:bg-white hover:text-purple-400 transition-colors duration-300 ease-in-out cursor-pointer m-3">My Work</div> */}
+          
         </div>
 
         {/* Desktop visuals */}
-        <div className="absolute hidden lg:block md:block bottom-0 right-0 pointer-events-none z-20">
-          <motion.div 
+        <div className="absolute hidden lg:block bottom-0 right-0 pointer-events-none z-20">
+          <motion.div
            style={{x,y}}
   transition={{ type: "spring", stiffness: 40, damping: 20 }}
           className="relative w-full h-full">
@@ -122,7 +122,7 @@ Scroll
               alt="aura"
               width={600}
               className="absolute bottom-[-100] right-25 z-5"
-              
+
             />
 
             <MotionImage
@@ -153,6 +153,52 @@ Scroll
           </motion.div>
         </div>
 
+        {/* Tablet visuals */}
+<div className="relative hidden lg:hidden md:block w-full h-[600px] mt-10 pointer-events-none">
+
+          <MotionImage
+            src={backfire}
+            alt="backfire"
+            width={300}
+            className="absolute inset-0 mx-auto left-1/4 top-1/4 opacity-70 blur-[1px] z-0"
+            {...FIRE_ANIMATION}
+          />
+
+          <Image
+            src={Aura}
+            alt="aura"
+            width={300}
+            className="absolute inset-0 left-1/4 mx-auto top-30 z-5"
+           
+          />
+
+          <MotionImage
+            src={stars}
+            alt="stars"
+            width={350}
+            className="absolute inset-0 mx-auto top-30 z-5"
+            {...STARS_ANIMATION}
+          />
+
+          <MotionImage
+            src={hero}
+            alt="hero"
+            fill
+            className="object-contain ml-12 z-10 scale-[1.3]"
+            {...FLOAT_SLOW}
+          />
+
+          <MotionImage
+            src={hand}
+            alt="hand"
+            fill
+            className="object-contain z-20 scale-[1.3] -ml-10"
+            {...FLOAT_FAST}
+          />
+
+          <div className="absolute -bottom-24 left-0 w-full h-[200px] z-30 bg-linear-to-t from-[#06090A] via-[#06090A]/60 to-transparent" />
+
+        </div>
         {/* Mobile visuals */}
         <div className="relative lg:hidden md:hidden w-full h-[420px] mt-10 pointer-events-none">
 

@@ -39,15 +39,15 @@ export default function Contact(){
 
     ]
     return (
-        <div className="lg:h-screen md:h-screen w-full overflow-hidden bg-[#06090A] flex">
+        <div className="lg:h-screen  w-full overflow-hidden bg-[#06090A] flex">
             <div className="h-fit lg:h-full md:h-full  lg:max-w-[1500px] md:max-w-[1200px] p-5 mx-auto grid grid-cols-2 gap-3 relative mt-10">
-                <div className="flex justify-center ">
+                <div className="flex justify-center items-center">
                     <div className="flex flex-col text-left leading-[0.9]  relative w-110">
                         <span className="lg:text-[5rem] md:text-[4rem] text-[2rem] font-bold">Let's Build Something</span>
                         <span className="lg:text-[5rem] md:text-[4rem] text-[2rem] font-bold text-purple-400">Great</span>
                     </div>
                 </div>
-                <div className="flex flex-col lg:justify-between md:justify-between gap-3">
+                <div className="flex flex-col  justify-center gap-5">
                     {
                         contacts.map((contact,i)=>{
                             return(
@@ -82,7 +82,7 @@ export default function Contact(){
                         duration:2,
                         ease:easeInOut
                     }}
-                    className="lg:text-[14rem] md:text-[12rem] text-[3.5rem] font-bold">SHREYAS C.</motion.span>
+                    className="lg:text-[14rem] md:text-[7rem] text-[3.5rem] font-bold">SHREYAS C.</motion.span>
                 </div>
                 {/* <Fire/> */}
             </div>
