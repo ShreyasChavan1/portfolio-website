@@ -89,7 +89,7 @@ Scroll
 </pre>
 
 
-      <div className="relative lg:h-full md:h-screen max-w-[1500px] mx-auto px-2 lg:px-8  flex flex-col-reverse  lg:flex-row items-center md:items-start md:justify-start lg:justify-start ">
+      <div className="relative lg:h-full md:h-screen max-w-[1500px] mx-auto px-2 lg:px-8  flex flex-col-reverse  lg:flex-row items-center  md:justify-start lg:justify-start ">
 
         {/* Text */}
         <div className="mt-10 lg:mt-0 ml-3 md:ml-15 md:mt-25 w-fit h-fit">
