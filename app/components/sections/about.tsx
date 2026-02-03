@@ -51,14 +51,10 @@ export default function About() {
                 <h3 className="font-bold text-1xl lg:text-2xl md:text-xl text-[#875edd] tracking-[0.4rem] lg:tracking-[0.5rem] md:tracking-[0.4rem] ">Fullstack Dev</h3>
                 <hr className="bg-amber-50 w-full border-[0.5] mt-2" />
                 <p className="max-w-prose text-[20px] lg:text-3xl md:text-2xl mt-2 lg:mt-5 md:mt-4 font-medium lg:font-extralight md:font-light lg:tracking-wider md:tracking-wide leading-[1.2] lg:leading-none md:leading-tight">
-                    I build modern, fast, and minimal interfaces
-                    using React, Next.js, JavaScript, and design-first thinking.
-                    I like mixing solid fundamentals with
-                    creative interactions to make products feel
-                    smooth, not just functional.
+                    I build modern, fast, and minimal interfaces with React, Next.js, and JavaScript, supported by solid backend architecture and design-first thinking. I mix fundamentals with creative interactions so products feel smooth, not just functional.
                 </p>
             </div>
-            <div className="hidden lg:block md:block w-130">
+            <div className="hidden lg:block md:block w-130 hover:scale-[1.03] transition-all duration-300">
                 <MotionImage
                 variants={slideVariant}
                 animate={Inview ? "visible" : "hidden"}

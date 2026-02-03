@@ -50,13 +50,15 @@ export default function Hero() {
       mouseY.set(e.clientY - rect.top)
     
   }
+const width = typeof window !== "undefined" ? window.innerWidth : 0;
+const height = typeof window !== "undefined" ? window.innerHeight : 0;
 const x = useSpring(
-  useTransform(mouseX, [0, window.innerWidth], [-10, 10]),
+  useTransform(mouseX, [0, width], [-10, 10]),
   { stiffness: 40, damping: 20 }
 );
 
 const y = useSpring(
-  useTransform(mouseY, [0, window.innerHeight], [-6, 6]),
+  useTransform(mouseY, [0, height], [-6, 6]),
   { stiffness: 40, damping: 20 }
 );
 
@@ -87,11 +89,11 @@ Scroll
 </pre>
 
 
-      <div className="relative lg:h-full md:h-full max-w-[1500px] mx-auto px-2 lg:px-8 md:px-6 flex flex-col-reverse lg:flex-row items-center lg:items-start md:items-center">
+      <div className="relative lg:h-full md:h-full max-w-[1500px] mx-auto px-2 lg:px-8 md:px-6 flex flex-col-reverse lg:flex-row items-center lg:items-center md:items-center">
 
         {/* Text */}
-        <div className="mt-10 ml-3 md:ml-10 w-fit h-fit">
-          <span className="text-[60px] lg:text-9xl md:text-8xl text-purple-400 font-bold leading-[0.8]">
+        <div className="mt-10 lg:mt-0 ml-3 md:ml-10 w-fit h-fit">
+          <span className="text-[60px] lg:text-[120px] md:text-8xl text-purple-400 font-bold leading-[0.8]">
             I Build 
           </span><br />
           <span className="text-[60px] lg:text-[120px] md:text-8xl text-white font-bold leading-[0.9]">
@@ -109,20 +111,23 @@ Scroll
 
             <MotionImage
               src={backfire}
-              width={500}
-              className="absolute bottom-25 right-30 z-0 opacity-70 blur-[1px]"
+              alt="backfire"
+              width={450}
+              className="absolute bottom-27 right-37 z-0 opacity-70 blur-[1px]"
               {...FIRE_ANIMATION}
             />
 
             <Image
               src={Aura}
+              alt="aura"
               width={600}
               className="absolute bottom-[-100] right-25 z-5"
-              alt="Aura"
+              
             />
 
             <MotionImage
               src={stars}
+              alt="stars"
               width={550}
               className="absolute bottom-50 right-28 z-5"
               {...STARS_ANIMATION}
@@ -130,6 +135,7 @@ Scroll
 
             <MotionImage
               src={hero}
+              alt="heor"
               width={780}
               height={500}
               className="relative z-10"
@@ -138,6 +144,7 @@ Scroll
 
             <MotionImage
               src={hand}
+              alt="hand"
               width={780}
               className="absolute bottom-0 right-18 z-20"
               style={{ y: handY }}
@@ -151,6 +158,7 @@ Scroll
 
           <MotionImage
             src={backfire}
+            alt="backfire"
             width={300}
             className="absolute inset-0 mx-auto left-1/4 top-1/4 opacity-70 blur-[1px] z-0"
             {...FIRE_ANIMATION}
@@ -158,13 +166,15 @@ Scroll
 
           <Image
             src={Aura}
+            alt="aura"
             width={300}
             className="absolute inset-0 left-1/4 mx-auto top-30 z-5"
-            alt="Aura"
+           
           />
 
           <MotionImage
             src={stars}
+            alt="stars"
             width={350}
             className="absolute inset-0 mx-auto top-30 z-5"
             {...STARS_ANIMATION}
@@ -172,6 +182,7 @@ Scroll
 
           <MotionImage
             src={hero}
+            alt="hero"
             fill
             className="object-contain ml-12 z-10 scale-[1.3]"
             {...FLOAT_SLOW}
@@ -179,6 +190,7 @@ Scroll
 
           <MotionImage
             src={hand}
+            alt="hand"
             fill
             className="object-contain z-20 scale-[1.3]"
             {...FLOAT_FAST}
@@ -188,12 +200,12 @@ Scroll
 
         </div>
         
+      </div>
         <Image
         src={logo}
         alt="logo"
-        width={200}
-        className="absolute bottom-0 left-0"/>
-      </div>
+        width={150}
+        className="absolute top-0 left-0"/>
 
     </div>
   )
