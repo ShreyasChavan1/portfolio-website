@@ -1,7 +1,7 @@
 import { FaEnvelope, FaInstagram } from "react-icons/fa"
 import Orbtrigger from "./orb";
 import {motion , AnimatePresence, easeInOut} from 'framer-motion'
-import { Collapse } from "./navwrapper";
+
 type navbarprops = {
     open: boolean,
     onToggle: ()=> void
@@ -78,9 +78,7 @@ export default function Navbar({open,onToggle}:navbarprops){
                 <div className="top-6 left-6 z-110 hidden lg:block md:block">
             <Orbtrigger glow={true} scale={5} onClick={onToggle} />
         </div>
-              {/* <div className="block md:hidden absolute right-0">
-                <Collapse onClick={onToggle}/>
-              </div> */}
+              
 
                 <motion.div
                 className="h-full max-w-[1500px] mx-auto p-5 relative flex items-end"
@@ -105,7 +103,7 @@ export default function Navbar({open,onToggle}:navbarprops){
                                 </motion.span>
                                 ))}
                           </div>
-                        <div className="hidden lg:block md:block lg:flex md:flex flex-col gap-3">
+                        <div className="hidden md:flex flex-col gap-3">
                           <a href="https://www.linkedin.com/in/shreyas-chavan-25jan2004" target="_blank" rel="noopener noreferrer">
                             <div className="rounded-[360px] border-4 border-purple-500 w-30 h-30 flex items-center justify-center hover:scale-[1.05] transition-all duration-400 ease-in-out" >
                                 <span className="text-6xl font-bold">in</span>

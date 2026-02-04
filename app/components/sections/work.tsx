@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import leetclone from '@/app/assets/leetclone.png'
 import chatbot from '@/app/assets/chatbot.png'
 import sorter from '@/app/assets/sorter.png'
-import { useEffect, useRef, useState } from "react";
+import {  useRef} from "react";
 import {easeInOut, motion , useInView}from 'framer-motion'
 
 
@@ -64,7 +64,7 @@ function Project_mobile_preview({image,alt}:{image:StaticImageData,alt:string}){
     )
 }
 export default function Work(){
-    const videoRef = useRef<HTMLVideoElement | null>(null)
+
     const catref = useRef(null);
        const Inview = useInView(catref,{
         once:true

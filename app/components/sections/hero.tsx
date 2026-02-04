@@ -6,10 +6,7 @@ import backfire from "@/app/assets/firecutout.png"
 import Aura from "@/app/assets/aura.png"
 import stars from "@/app/assets/stars.png"
 import logo from "@/app/assets/image.png"
-import { motion, useScroll, useTransform ,easeInOut, useMotionValue, useSpring } from 'framer-motion'
-
-import type { Transition } from "framer-motion"
-import React, { useState } from "react"
+import { motion, useScroll, useTransform ,useMotionValue, useSpring } from 'framer-motion'
 
 const EASE_IN_OUT: [number, number, number, number] = [0.4, 0, 0.2, 1]
 const LINEAR: [number, number, number, number] = [0, 0, 1, 1]
@@ -84,11 +81,9 @@ const y = useSpring(
   }}
 />
 <pre className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white text-2xl animate-pulse hidden lg:block">
-Scroll
+ Scroll
   <span className="text-purple-400">↓</span>
 </pre>
-
-
       <div className="relative lg:h-full md:h-screen max-w-[1500px] mx-auto px-2 lg:px-8  flex flex-col-reverse  lg:flex-row items-center  md:justify-start lg:justify-start ">
 
         {/* Text */}

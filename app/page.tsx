@@ -1,17 +1,15 @@
 "use client"
-import Image from "next/image";
-import { motion ,useScroll, useTransform } from "framer-motion";
+
+import { motion} from "framer-motion";
 import Hero from "./components/sections/hero";
 import About from "./components/sections/about";
-import Fire from "./components/sections/fire";
 import Skills from "./components/sections/skills";
 import Work from "./components/sections/work";
 import Contact from "./components/sections/contact";
-import Navbar from "./components/navbar/overlay";
+
 
 export default function Home() {
-  const {scrollY} = useScroll();
-  const aboutY = useTransform(scrollY,[0,600],["0%","-100%"]);
+
   return (
     <>
     <section className="relative lg:sticky md:sticky lg:top-0 md:top-0 h-screen" id="HOME">
@@ -19,13 +17,8 @@ export default function Home() {
         <Hero/>
       </motion.div>
     </section>
-      {/* <Fire/> */}
       <section className="relative z-50" id="ABOUT">
-
-       
-      
         <About/>
-        
       </section>
       <section className="relative z-50" id="SKILLS">
         <Skills/>

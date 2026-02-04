@@ -31,7 +31,7 @@ export default function About() {
     return (
         <div ref={heroRef} className="relative h-fit lg:h-screen md:h-screen lg:w-full md:w-full overflow-hidden bg-[#06090A] flex">
             <div className="relative w-full  max-w-[1300px] mx-auto flex flex-col lg:flex-row md:flex-row items-center lg:justify-center md:justify-center ">
-                <div className="lg:h-full md:h-full w-auto text-purple-400 font-bold text-6xl  lg:text-[110px] md:text-[90px] relative flex items-center">
+                <div className="lg:h-full md:h-full w-auto text-purple-600 font-bold text-6xl  lg:text-[110px] md:text-[90px] relative flex items-center opacity-[0.6]">
 
                     <motion.span
                     variants={slideVariant}

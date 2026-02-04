@@ -37,7 +37,6 @@ export default function Skills() {
    
     return (
         <div className="md:h-full w-full bg-[rgb(6,9,10)] overflow-hidden text-center">
-
             <motion.div
             ref={catref}
             initial={ {y:30,opacity:0}}
@@ -69,10 +68,10 @@ export default function Skills() {
                                 <motion.div 
                                 key={i}
                                 style={{x}}
-                                className="[writing-mode:vertical-rl] rotate-180 text-6xl md:text-9xl font-bold text-purple-400  relative">
+                                className="[writing-mode:vertical-rl] rotate-180 text-6xl md:text-[120px] font-bold text-purple-400  relative">
                                     {cat.category}
                                 </motion.div>
-                                <div className="w-fit relative flex flex-col text-4xl md:text-8xl font-bold items-start justify-center">
+                                <div className="w-fit relative flex flex-col text-4xl md:text-[90px] font-bold md:font-semibold items-start justify-center">
                                     {cat.tech.map((tech, i) => {
                                    const total = tech.length
                                     const CENTER = 0.5
@@ -107,7 +106,7 @@ export default function Skills() {
                         </>
                             :
                             <>
-                                <div className="w-fit relative flex flex-col text-4xl md:text-8xl font-bold items-end justify-center ">
+                                <div className="w-fit relative flex flex-col text-4xl md:text-[90px] md:font-semibold font-bold items-end justify-center ">
                                     {cat.tech.map((tech, i) => {
                                     const total = tech.length
                                     const CENTER = 0.5
@@ -142,7 +141,7 @@ export default function Skills() {
                                 <motion.div
                                 style={{x}}
                                 key={i}
-                                className="[writing-mode:vertical-rl] text-6xl md:text-9xl font-bold text-purple-400 relative">
+                                className="[writing-mode:vertical-rl] text-6xl md:text-[120px] font-bold text-purple-400 relative">
                                     {cat.category}
                                 </motion.div>
                             </>
