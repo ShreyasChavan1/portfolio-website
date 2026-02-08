@@ -135,7 +135,7 @@ export default function Work(){
                 <div className="relative lg:w-[77vw] md:w-[75vw] flex-row lg:flex md:flex  gap-2 items-center">
                     <div className="flex flex-col gap-3  lg:w-[50vw] md:w-[48vw] lg:hover:w-[55vw] md:hover:w-[52vw]
     transition-[width] duration-500 ease-out m-5 lg:m-0 md:m-0">
-                        <a href="https://shreyaschavan1.github.io/Prompt-GPT/" target="_blank" className="cursor-pointer">
+                        <a href="https://shreyaschavan1.github.io/Chatbot/" target="_blank" className="cursor-pointer">
                             <div className="hidden md:block">
                                 <Project_preview image={chatbot} video="https://swltbadfgyuiifqsprie.supabase.co/storage/v1/object/public/Videos/gemini_preview.mp4" alt="chatbot" />
                             </div>
