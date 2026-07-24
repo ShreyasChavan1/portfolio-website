@@ -18,7 +18,7 @@ export default function Skills() {
 
         },
         {
-            category: "WEB-DEV",
+            category: "FRONTEND",
             tech: ["FRAMER-MOTION","TAILWIND","NEXT.JS","HTML","MERN"]
 
         },
@@ -28,7 +28,7 @@ export default function Skills() {
 
         },
         {
-            category: "DEVOPS",
+            category: "CLOUD",
             tech: [ "Github-Actions","DOCKER","AZURE","NGINX","GIT"]
 
         },
